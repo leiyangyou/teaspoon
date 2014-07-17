@@ -31,6 +31,12 @@ Teaspoon.configure do |config|
     suite.helper = "qunit_helper"
   end
 
+  config.suite :angular do |suite|
+    suite.matcher = "spec/javascripts/**/*_aspec.{js,js.coffee,coffee}"
+    suite.javascripts = ["angular/1.0.5", "teaspoon/angular"]
+    suite.helper = "angular_helper"
+  end
+
   #config.suite :integration do |suite|
   #  suite.matcher = "spec/dummy/app/assets/javascripts/integration/*_spec.{js,js.coffee,coffee}"
   #  suite.helper = nil
